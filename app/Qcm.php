@@ -22,6 +22,11 @@ class Qcm extends Model
 
     public function resultat()
     {
-        return $this->hasOne('App\Resultat_qcm');
+        return $this->hasMany('App\Resultat_qcm');
+    }
+
+    public function classes()
+    {
+        return $this->belongsToMany(Classe::class);
     }
 }

@@ -17,12 +17,17 @@ class Matiere extends Model
 
     public function classes()
     {
-        return $this->belongsToMany(Classe::class, 'classe_matiere');
+        return $this->belongsToMany(Classe::class);
     }
 
     public function niveaux()
     {
         return $this->hasMany('App\Niveau');
+    }
+
+    public function resultat()
+    {
+        return $this->hasOne('App\Resultat_matiere');
     }
 
 }

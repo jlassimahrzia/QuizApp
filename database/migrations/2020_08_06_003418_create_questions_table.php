@@ -20,12 +20,14 @@ class CreateQuestionsTable extends Migration
             $table->string('choix2');
             $table->string('choix3');
             $table->string('choix4')->nullable();
-            $table->enum('reponse1', ['1', '2', '3','4']);
-            $table->enum('reponse2', ['1', '2', '3','4'])->nullable();
+            $table->enum('reponse1', ['vrai', 'faux']);
+            $table->enum('reponse2', ['vrai', 'faux']);
+            $table->enum('reponse3', ['vrai', 'faux']);
+            $table->enum('reponse4', ['vrai', 'faux'])->nullable();
             $table->float('note', 8, 2);
             $table->unsignedBigInteger('qcm_id');
             $table->timestamps();
-            $table->foreign('qcm_id')->references('id')->on('qcms');
+            $table->foreign('qcm_id')->references('id')->on('qcms')->onDelete('cascade');
         });
     }
 

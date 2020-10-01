@@ -13,7 +13,8 @@ class CreateClasseMatieresTable extends Migration
      */
     public function up()
     {
-        Schema::create('classe__matieres', function (Blueprint $table) {
+        Schema::create('classe_matiere', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('classe_id');
             $table->unsignedBigInteger('matiere_id');
             $table->foreign('classe_id')->references('id')->on('classes')->onDelete('cascade');

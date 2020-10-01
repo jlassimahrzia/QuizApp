@@ -18,12 +18,13 @@ class CreateResultatQcmsTable extends Migration
             $table->unsignedBigInteger('qcm_id');
             $table->unsignedBigInteger('etudiant_id');
             $table->float('score', 8, 2);
-            $table->integer('temps');
-            $table->enum('is_done', ['1', '2', '3','4']);
-            $table->enum('is_succeeded', ['1', '2', '3','4']);
+            $table->integer('temps')->nullable();
+            $table->float('pourcentage', 8, 2);
+            $table->enum('is_done', ['0', '1'])->default('0');
+            $table->enum('is_succeeded', ['0', '1'])->default('0');
             $table->timestamps();
-            $table->foreign('qcm_id')->references('id')->on('qcms');
-            $table->foreign('etudiant_id')->references('id')->on('users');
+            $table->foreign('qcm_id')->references('id')->on('qcms')->onDelete('cascade');
+            $table->foreign('etudiant_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

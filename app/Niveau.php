@@ -20,5 +20,10 @@ class Niveau extends Model
     {
         return $this->hasMany('App\Qcm');
     }
+
+    public function resultat()
+    {
+        return $this->hasMany('App\Resultat_niveau');
+    }
 }
 

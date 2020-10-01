@@ -22,10 +22,10 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('photo');
             $table->enum('role', ['1', '2', '3']); // admin (1) enseignant (2) étudiant(3)
-            $table->unsignedBigInteger('classe_id');
+            $table->unsignedBigInteger('classe_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
-            $table->foreign('classe_id')->references('id')->on('classes');
+            $table->foreign('classe_id')->references('id')->on('classes')->onDelete('cascade');
         });
     }
 

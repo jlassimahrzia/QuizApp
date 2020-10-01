@@ -14,4 +14,9 @@ class Question extends Model
     {
         return $this->belongsTo('App\Qcm');
     }
+
+    public function resultat(){
+        return $this->hasMany('App\Resultat_question');
+    }
+
 }

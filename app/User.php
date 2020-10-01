@@ -46,9 +46,18 @@ class User extends Authenticatable
         return $this->hasMany('App\Matiere');
     }
 
-    public function resultat()
+    public function resultat_qcm()
     {
-        return $this->hasOne('App\Resultat_qcm');
+        return $this->hasMany('App\Resultat_qcm','etudiant_id');
+    }
+
+    public function resultat_niveau()
+    {
+        return $this->hasMany('App\Resultat_niveau','etudiant_id');
+    }
+
+    public function resultat_question(){
+        return $this->hasOne('App\Resultat_question');
     }
 }
 

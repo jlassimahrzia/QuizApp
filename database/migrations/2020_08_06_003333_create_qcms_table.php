@@ -16,10 +16,10 @@ class CreateQcmsTable extends Migration
         Schema::create('qcms', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nom');
-            $table->integer('temps');
+            $table->integer('duree');
             $table->unsignedBigInteger('niveau_id');
             $table->timestamps();
-            $table->foreign('niveau_id')->references('id')->on('niveaux');
+            $table->foreign('niveau_id')->references('id')->on('niveaux')->onDelete('cascade');
         });
     }
 

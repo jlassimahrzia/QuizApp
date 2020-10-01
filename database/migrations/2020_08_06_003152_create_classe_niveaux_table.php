@@ -15,11 +15,12 @@ class CreateClasseNiveauxTable extends Migration
     {
         Schema::create('niveaux', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('numero');
             $table->string('nom');
-            $table->string('Description')->nullable();
+            /* $table->text('Description')->nullable(); */
             $table->unsignedBigInteger('matiere_id');
             $table->timestamps();
-            $table->foreign('matiere_id')->references('id')->on('matieres');
+            $table->foreign('matiere_id')->references('id')->on('matieres')->onDelete('cascade');
         });
     }
 
