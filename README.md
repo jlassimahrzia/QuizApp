@@ -1,9 +1,9 @@
-0- télècharger le projet
-1- Installer composer
-2- créer une base de données sous le nom qcm
-3- passer la commande php artisan install ( pour génèrer les dépendances )
-4- php artisan migrate:fresh --seed ( pour génèrer les tables de la base des données et le compte admin )
-5- php artisan serve ( pour ouvrir le serveur )
-6- ouvrir apache et MySql ( xampp )
-7- ouvrir dans le navigateur localhost:8000
-8- compte admin username admin@quiz.com password 123456789
+1. Télècharger le projet
+2. Installer composer
+3. Créer une base de données sous le nom qcm
+4. Passer la commande php artisan install ( pour génèrer les dépendances )
+5. Php artisan migrate:fresh --seed ( pour génèrer les tables de la base des données et le compte admin )
+6. Php artisan serve ( pour ouvrir le serveur )
+7. Ouvrir apache et MySql ( xampp )
+8. Ouvrir dans le navigateur localhost:8000
+9. Compte admin username admin@quiz.com password 123456789
